@@ -1,0 +1,605 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 60px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* HEADER */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px 40px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #111;
+}
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    font-size: 15px;
+}
+
+.nav a:hover {
+    color: #0d7a5f;
+}
+
+/* BANNER  */
+
+.hero {
+    height: 420px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: relative;
+    background-color: rgba(0,0,0,0.55);
+    padding: 24px 36px;
+    border-radius: 16px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-overlay h1 {
+    font-size: 2.6rem;
+    margin-bottom: 8px;
+}
+
+.hero-overlay p {
+    font-size: 1.1rem;
+}
+
+/* BOTÓN ABAJO DEL BANNER */
+
+.cta-bajo-hero {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 10px;
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 30px;
+    background-color: #02436e;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.btn-cta:hover {
+    background-color: #02436e;
+}
+
+/* TIENDA */
+
+.tienda-section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px 40px;
+}
+
+.tienda-section h2 {
+    text-align: center;
+    margin: 30px 0 20px;
+    font-size: 2.4rem;
+}
+
+/* filtros */
+
+.tienda-filtros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+#buscador-productos {
+    width: 100%;
+    max-width: 480px;
+    padding: 9px 14px;
+    border-radius: 10px;
+    border: 2px solid #02436e;
+    font-size: 15px;
+    outline: none;
+}
+
+#buscador-productos:focus {
+    border-color: #02436e;
+}
+
+.orden-precio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.orden-precio button {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #02436e;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.orden-precio button:hover {
+    background-color: #02436e;
+}
+
+/* grilla productos */
+
+.tienda-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.tienda-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 14px 14px 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.tienda-img-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.tienda-img-wrapper img {
+    width: 100px;
+    height: 100px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.tienda-card h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+    text-align: center;
+}
+
+.tienda-descripcion {
+    font-size: 14px;
+    text-align: center;
+    min-height: 60px;
+}
+
+.tienda-precio {
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.btn-agregar {
+    margin-top: 6px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+    background-color: #02436e;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-agregar:hover {
+    background-color: #0b5c47;
+}
+
+/* carrito abajo */
+
+.carrito-section {
+    margin-top: 28px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 18px 18px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.carrito-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#lista-carrito {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #dddddd;
+    font-size: 14px;
+}
+
+.item-carrito span {
+    display: block;
+}
+
+.item-carrito-controles {
+    display: flex;
+    gap: 6px;
+}
+
+.item-carrito-controles button {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-menos {
+    background-color: #e74c3c;
+}
+
+.btn-mas {
+    background-color: #2ecc71;
+}
+
+.item-carrito-controles button:hover {
+    opacity: 0.85;
+}
+
+.carrito-resumen {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.carrito-resumen p {
+    display: flex;
+    justify-content: space-between;
+    margin: 3px 0;
+}
+
+.carrito-resumen .total {
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 4px;
+}
+
+.carrito-resumen hr {
+    border: none;
+    border-top: 1px solid #cccccc;
+    margin: 6px 0;
+}
+
+.btn-confirmar,
+.btn-vaciar {
+    width: 100%;
+    padding: 9px 0;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.btn-confirmar {
+    background-color: #2ecc71;
+    color: #ffffff;
+}
+
+.btn-confirmar:hover {
+    background-color: #27ae60;
+}
+
+.btn-vaciar {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+.btn-vaciar:hover {
+    background-color: #c0392b;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: #222;
+    color: #ffffff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.redes {
+    display: flex;
+    gap: 15px;
+}
+
+.redes a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+
+
+
+/* ADMIN */
+
+.admin-wrapper {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    padding: 80px 20px 30px;
+}
+
+.admin-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* tabla admin */
+
+.tabla-container {
+    overflow-x: auto;
+    margin-bottom: 35px;
+}
+
+#tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+#tabla-productos th,
+#tabla-productos td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+}
+
+#tabla-productos th {
+    background-color: #333;
+    font-size: 1rem;
+}
+
+.img-tabla {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.descripcionAdmin {
+    max-width: 260px;
+    word-wrap: break-word;
+}
+
+/* botones admin */
+
+.btn-eliminar {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-eliminar:hover {
+    background-color: #c0392b;
+}
+
+/* formulario admin */
+
+.admin-form {
+    max-width: 450px;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.admin-form h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    font-size: 0.95rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.divFormButton {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.divFormButton button {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    background-color: #0d7a5f;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.divFormButton button:hover {
+    background-color: #0b5c47;
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 900px) {
+    .tienda-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .admin-wrapper {
+        padding-top: 70px;
+    }
+
+    #tabla-productos {
+        font-size: 0.85rem;
+        min-width: 650px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        padding-top: 70px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .tienda-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-form {
+        width: 100%;
+    }
+
+    .flotante {
+        right: 20px;
+        bottom: 20px;
+    }
+}
+ /* BANNER */
+
+.hero {
+    position: relative;
+    height: 500px;      
+    overflow: hidden;   /* corta lo que sobresale */
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* hace que la foto rellene el espacio */
+    display: block;
+}
+/* BOTÓN FLOTANTE WHATSAPP */
+
+.flotante {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+}
+
+.flotante a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #25d366;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.icono-whatsapp {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: block;
+}
+.iconoContacto {
+    width: 24px;      
+    height: 24px;     
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.redes a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
